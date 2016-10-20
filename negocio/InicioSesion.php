@@ -11,7 +11,7 @@ class InicioSesion extends Conexion{
             $sql = "select * from f_validar_sesion (:p_email,:p_clave)";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_email", $this->getEmail());
-            $sentencia->bindParam(":p_clave", $this->getContraseña());
+            $sentencia->bindParam(":p_clave", $this->getClave());
             $sentencia->execute();
             return $sentencia->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $exc) {
