@@ -3,20 +3,20 @@
 require_once '../negocio/InicioSesion.php';
 require_once '../util/funciones/Funciones.clase.php';
 
-if (! isset($_POST["email"]) || ! isset($_POST["contraseña"])){
+if (! isset($_POST["email"]) || ! isset($_POST["clave"])){
     Funciones::imprimeJSON(500, "Falta completar los datos requeridos", "");
     exit();
 }
 
 $email = $_POST["email"];
-$clave = $_POST["contraseña"];
+$clave = $_POST["clave"];
 
 
 try {
     
     $objSesion = new InicioSesion();
     $objSesion->setEmail($email);
-    $objSesion->setContraseña($contraseña);
+    $objSesion->setContraseña($clave);
     $resultado = $objSesion->validarSesion();
     
     print_r($resultado);

@@ -2,9 +2,9 @@
 
 require_once '../datos/Conexion.clase.php';
 
-class InicioSesion {
+class InicioSesion extends Conexion{
     private $email;
-    private $contraseña;
+    private $clave;
     
     public function validarSesion(){
         try {
@@ -23,16 +23,16 @@ class InicioSesion {
         return $this->email;
     }
 
-    function getContraseña() {
-        return $this->contraseña;
+    function getClave() {
+        return $this->clave;
     }
 
     function setEmail($email) {
         $this->email = $email;
     }
 
-    function setContraseña($contraseña) {
-        $this->contraseña = $contraseña;
+    function setClave($clave) {
+        $this->clave = $clave;
     }
 
 }
