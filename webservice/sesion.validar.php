@@ -22,6 +22,7 @@ try {
     $resultado["foto"] = $foto;
     
     if ($resultado["estado"]==200) {
+        unset($resultado["estado"]);
         Funciones::imprimeJSON(200, "", $resultado);
     }else{
         Funciones::imprimeJSON(500, $resultado["dato"], "");
