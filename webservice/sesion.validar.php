@@ -17,7 +17,7 @@ try {
     $objSesion = new InicioSesion();
     $objSesion->setEmail($email);
     $objSesion->setContraseña($contraseña);
-    $resultado = $objSesion->validarSesion;
+    $resultado = $objSesion->validarSesion();
     
     print_r($resultado);
     
