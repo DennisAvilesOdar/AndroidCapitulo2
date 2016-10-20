@@ -18,6 +18,8 @@ try {
     $objSesion->setEmail($email);
     $objSesion->setClave($clave);
     $resultado = $objSesion->validarSesion();
+    $foto = $objSesion->obtenerFoto($resultado["dato"]);
+    $resultado["foto"] = $foto;
     
     print_r($resultado);
     
