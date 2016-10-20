@@ -21,7 +21,13 @@ try {
     $foto = $objSesion->obtenerFoto($resultado["dato"]);
     $resultado["foto"] = $foto;
     
-    print_r($resultado);
+    if ($resultado["estado"]==200) {
+        Funciones::imprimeJSON(200, "", $resultado);
+    }else{
+        Funciones::imprimeJSON(500, $resultado["dato"], "");
+    }
+   
+    //print_r($resultado);
     
 } catch (Exception $exc) {
     
