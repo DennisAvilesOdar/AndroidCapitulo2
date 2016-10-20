@@ -6,6 +6,19 @@ class InicioSesion {
     private $email;
     private $contraseña;
     
+    public function validarSesion(){
+        try {
+            $sql = "select * from f_validar_sesion (:p_email,:p_clave)";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_email", $this->getEmail());
+            $sentencia->bindParam(":p_clave", $this->getContraseña());
+            $sentencia->execute();
+            return $sentencia->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $exc) {
+            throw $exc;
+        }
+    }
+    
     function getEmail() {
         return $this->email;
     }
@@ -21,6 +34,5 @@ class InicioSesion {
     function setContraseña($contraseña) {
         $this->contraseña = $contraseña;
     }
-
 
 }
