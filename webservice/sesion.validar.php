@@ -23,7 +23,7 @@ try {
     
     if ($resultado["estado"]==200) {
         unset($resultado["estado"]);
-        Funciones::imprimeJSON(200, "", $resultado);
+        Funciones::imprimeJSON(200, "Bienvenido a la Aplicacion", $resultado);
     }else{
         Funciones::imprimeJSON(500, $resultado["dato"], "");
     }
