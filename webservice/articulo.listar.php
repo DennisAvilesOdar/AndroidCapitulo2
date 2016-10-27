@@ -15,7 +15,9 @@ try {
     
     if (validarToken($token)) {
         $obj = new articulo();
-        $resultado = $obj->lis
+        $resultado = $obj->listar();
+        Funciones::imprimeJSON(200,"",$resultado);
+        
     }
     
 } catch (Exception $exc) {
