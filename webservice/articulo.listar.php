@@ -8,7 +8,7 @@ if (! isset($_POST["token"])){
     exit();
 }
 
-$email = $_POST["token"];
+$token = $_POST["token"];
 
 
 try {
