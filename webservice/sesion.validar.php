@@ -23,6 +23,11 @@ try {
     
     if ($resultado["estado"]==200) {
         unset($resultado["estado"]);
+        /*Generar un token de seguridad*/
+        require_once 'token.generar.php';
+        $token = generarToken(null,60);
+        $resultado["token"] = $token;
+        /*Generar un token de seguridad*/
         Funciones::imprimeJSON(200, "Bienvenido a la Aplicacion", $resultado);
     }else{
         Funciones::imprimeJSON(500, $resultado["dato"], "");
