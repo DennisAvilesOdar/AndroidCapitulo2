@@ -35,7 +35,7 @@ try {
             $listaArticulo[$i] = $datosArticulo;
         }
         
-        Funciones::imprimeJSON(200,"",$resultado);
+        Funciones::imprimeJSON(200,"",$resultado,$listaArticulo);
         
     }
     
