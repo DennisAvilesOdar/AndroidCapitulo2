@@ -15,9 +15,9 @@ try {
     
     if (validarToken($token)) {
         $obj = new SerieComprobante();
-        $resultado = $obj->cargarSerieComprobante($_POST["to"]);
+        $resultado = $obj->cargarSerieComprobante($_POST["p_to"]);
         
-        Funciones::imprimeJSON(200,"",$listaArticulo);
+        Funciones::imprimeJSON(200,"",$resultado);
         
     }
     
