@@ -17,7 +17,8 @@ try {
         $codigoTipoComprobante = $_POST["p_to"];
         $numeroSerie = $_POST["p_nser"];
         $codigoCliente = $_POST["p_cli"];
-        $fechaVenta = $_POST["p_fv"];
+        //$fechaVenta = $_POST["p_fv"];
+        $fechaVenta = date('Y-a-d');
         $codigoUsuario = $_POST["p_cu"];
         $detalleVenta = $_POST["p_det"];
         
