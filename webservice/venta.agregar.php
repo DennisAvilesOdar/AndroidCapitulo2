@@ -18,7 +18,7 @@ try {
         $numeroSerie = $_POST["p_nser"];
         $codigoCliente = $_POST["p_cli"];
         //$fechaVenta = $_POST["p_fv"];
-        $fechaVenta = date('Y-a-d');
+        $fechaVenta = date('Y-m-d');
         $codigoUsuario = $_POST["p_cu"];
         $detalleVenta = $_POST["p_det"];
         
@@ -37,6 +37,10 @@ try {
     }
     
 } catch (Exception $exc) {
-    
-    Funciones::imprimeJSON(500, $exc->getMessage(), "");
+    $mensajeError = $exc->getMessage();
+    $position = strpos($mensajeError, "Raise Exception: ");
+    if($position > 0){
+        $mensajeError = substr($mensajeError, $position+27, strlen($mensajeError));
+    }
+    Funciones::imprimeJSON(500, $mensajeError, "");
 }
